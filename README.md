@@ -7,17 +7,28 @@ Os dados estão sendo disponibilizado em um arquivo [.CSV](https://pt.wikipedia.
 ## Como rodar o projeto?
 
 Faça o remote para o repositório do GitHub na pasta que gostaria:
-```git
+```
 git remote add origin "https://github.com/OtavioVB/api_enem_microdados.git"
 ```
 
 Faça o clone do repositório
-```git
+```
 git clone
 ```
 
 Crie um Banco de Dados MySql e Importe por meio do arquivo .csv os dados.
+Rode o projeto
+```
+dotnet run
+```
 
+## Atualizações da API
+
+### Buscar informações do Usuário
+- **Método**: GET
+- **Rota**: localhost:7225/api/v1/content/Participante/{NúmeroInscrição}
+- **NúmeroInscrição**: Variável correspondente a inscrição do estudante no ENEM (string)
+- **Tipo de Retorno**: Lista de Objetos em **JSON**
 
 # Referências
 - [Microdados ENEM](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem);
