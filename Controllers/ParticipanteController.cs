@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using APIEnem.Models.Candidato;
 
 namespace APIEnem.Controllers
 {
@@ -9,7 +10,7 @@ namespace APIEnem.Controllers
         [HttpGet("{NúmeroInscrição}")]
         public IActionResult Get()
         {
-            return Ok("Ok");
+            return Ok("ok");
         }
     }
 }

@@ -5,7 +5,7 @@ using APIEnem.Models.Candidato;
 
 namespace APIEnem.Infra.Data.Participante
 {
-    public class BancoParticipante
+    public class BancoParticipante : IDataParticipante
     {
         private readonly IDataConnection _conexaoBanco;
 
