@@ -2,6 +2,7 @@
 using System.Data;
 using APIEnem.Models.Interfaces;
 using APIEnem.Models.Candidato;
+using Newtonsoft.Json;
 
 namespace APIEnem.Infra.Data.Participante
 {
@@ -14,13 +15,13 @@ namespace APIEnem.Infra.Data.Participante
             this._conexaoBanco = conexaoBanco;
         }
 
-        public DataTable BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número)
+        public string BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número)
         {
             try
             {
                 using (MySqlCommand Comando = _conexaoBanco.ConectarBanco().CreateCommand())
                 {
-                    Comando.CommandText = "SELECT * FROM TB_DADOS_ENEM WHERE NU_INSCRICAO = @NúmeroDeInscrição";
+                    Comando.CommandText = "SELECT * FROM TB_DADOS WHERE NU_INSCRICAO = @NúmeroDeInscrição";
                     Comando.Parameters.AddWithValue("@NúmeroDeInscrição", Número.ToString());
                     using (DataTable Data = new DataTable())
                     {
@@ -31,7 +32,7 @@ namespace APIEnem.Infra.Data.Participante
 
                         if (Data.Rows.Count > 0)
                         {
-                            return Data;
+                            return JsonConvert.SerializeObject(Data); // RETORNAR_EM_FORMATO_JSON
                         }
                         else
                         {

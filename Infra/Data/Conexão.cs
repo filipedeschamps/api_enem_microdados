@@ -11,7 +11,7 @@ namespace APIEnem.Infra.Data
             {
                 MySqlConnection conexao = new MySqlConnection("" +
                     "server=127.0.0.1;" +
-                    "database=forum_artigos;" +
+                    "database=enem_microdata;" +
                     "uid=otavio;" +
                     "pwd=1234;" +
                     "port=3306");
