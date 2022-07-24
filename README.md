@@ -31,7 +31,7 @@ dotnet run
 - **Método**: `GET`
 - **Rota**: localhost:7225/api/v1/content/Participante/{NúmeroInscrição}
 - **NúmeroInscrição**: Variável correspondente a inscrição do estudante no ENEM (string)
-- **Tipo de Retorno**: Lista de Objetos em **JSON**
+- **Tipo de Retorno**: Lista de Objetos em `JSON`
 
 # Referências
 - [Microdados ENEM](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem);
