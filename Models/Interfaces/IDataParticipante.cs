@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using APIEnem.Models.Application;
 using APIEnem.Models.Candidato;
 
 namespace APIEnem.Models.Interfaces

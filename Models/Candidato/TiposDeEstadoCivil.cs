@@ -17,7 +17,7 @@ namespace APIEnem.Models.Candidato
 
         public string CONVERTER_CÓDIGO_CIVIL_PARA_TEXTO(int CÓDIGO_ESTADO_CIVIL)
         {
-            string Retorno = "";
+            string? Retorno;
             if (_tiposEstadoCivil.TryGetValue(CÓDIGO_ESTADO_CIVIL, out Retorno) is true)
             {
                 return Retorno;

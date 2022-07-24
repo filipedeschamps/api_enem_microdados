@@ -18,9 +18,9 @@ namespace APIEnem.Controllers
 
 
         [HttpGet("{NúmeroInscrição}")]
-        public IActionResult Get(string NúmeroInscrição)
+        public string Get(string NúmeroInscrição)
         {
-            return Ok(_dataParticipante.BUSCAR_INFORMACOES_DO_PARTICIPANTE(new NúmeroInscrição(NúmeroInscrição)).ToString());
+            return _dataParticipante.BUSCAR_INFORMACOES_DO_PARTICIPANTE(new NúmeroInscrição(NúmeroInscrição)).ToString();
         }
     }
 }

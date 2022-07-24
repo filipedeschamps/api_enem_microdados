@@ -9,12 +9,7 @@ namespace APIEnem.Infra.Data
         {
             try
             {
-                MySqlConnection conexao = new MySqlConnection("" +
-                    "server=127.0.0.1;" +
-                    "database=enem_microdata;" +
-                    "uid=otavio;" +
-                    "pwd=1234;" +
-                    "port=3306");
+                MySqlConnection conexao = new MySqlConnection("server=127.0.0.1;database=enem_microdata;uid=otavio;pwd=1234;port=3306");
                 return conexao;
             }
             catch

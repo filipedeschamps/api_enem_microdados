@@ -32,7 +32,7 @@ namespace APIEnem.Models.Candidato
 
         public string RetornarTipoDaFaixaEtária(FaixaEtária FaixaEtária)
         {
-            string Retorno = "";
+            string? Retorno;
             if (_FaixaEtáriaTipos.TryGetValue(FaixaEtária.ToString(), out Retorno) is true)
             {
                 return Retorno;

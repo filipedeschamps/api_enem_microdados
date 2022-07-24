@@ -2,6 +2,7 @@
 using System.Data;
 using APIEnem.Models.Interfaces;
 using APIEnem.Models.Candidato;
+using APIEnem.Models.Application;
 
 namespace APIEnem.Infra.Data.Participante
 {
@@ -31,7 +32,7 @@ namespace APIEnem.Infra.Data.Participante
 
                         if (Data.Rows.Count > 0)
                         {
-                            return new Json(Data); // RETORNAR_EM_FORMATO_JSON
+                            return new Json(Data);
                         }
                         else
                         {
