@@ -14,7 +14,7 @@ namespace APIEnem.Infra.Data.Participante
             this._conexaoBanco = conexaoBanco;
         }
 
-        public Json BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número)
+        public async Task<Json> BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace APIEnem.Infra.Data.Participante
                     {
                         using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(Comando))
                         {
-                            dataAdapter.Fill(Data);
+                            await dataAdapter.FillAsync(Data);
                         }
 
                         if (Data.Rows.Count > 0)
