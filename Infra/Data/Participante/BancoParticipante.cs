@@ -2,7 +2,6 @@
 using System.Data;
 using APIEnem.Models.Interfaces;
 using APIEnem.Models.Candidato;
-using Newtonsoft.Json;
 
 namespace APIEnem.Infra.Data.Participante
 {
@@ -15,7 +14,7 @@ namespace APIEnem.Infra.Data.Participante
             this._conexaoBanco = conexaoBanco;
         }
 
-        public string BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número)
+        public Json BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número)
         {
             try
             {
@@ -32,7 +31,7 @@ namespace APIEnem.Infra.Data.Participante
 
                         if (Data.Rows.Count > 0)
                         {
-                            return JsonConvert.SerializeObject(Data); // RETORNAR_EM_FORMATO_JSON
+                            return new Json(Data); // RETORNAR_EM_FORMATO_JSON
                         }
                         else
                         {

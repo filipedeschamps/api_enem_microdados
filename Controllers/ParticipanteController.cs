@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using APIEnem.Models.Candidato;
 using APIEnem.Models.Interfaces;
-using System.Data;
-
+using Newtonsoft.Json;
 
 namespace APIEnem.Controllers
 {
@@ -21,7 +20,7 @@ namespace APIEnem.Controllers
         [HttpGet("{NúmeroInscrição}")]
         public IActionResult Get(string NúmeroInscrição)
         {
-                return Ok(_dataParticipante.BUSCAR_INFORMACOES_DO_PARTICIPANTE(new NúmeroInscrição(NúmeroInscrição)));
+            return Ok(_dataParticipante.BUSCAR_INFORMACOES_DO_PARTICIPANTE(new NúmeroInscrição(NúmeroInscrição)).ToString());
         }
     }
 }

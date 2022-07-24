@@ -5,6 +5,6 @@ namespace APIEnem.Models.Interfaces
 {
     public interface IDataParticipante
     {
-        string BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número);
+        Json BUSCAR_INFORMACOES_DO_PARTICIPANTE(NúmeroInscrição Número);
     }
 }
