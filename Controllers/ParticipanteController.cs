@@ -16,22 +16,13 @@ namespace APIEnem.Controllers
             this._dataParticipante = dataParticipante;
         }
 
-
         [HttpGet("{NúmeroInscrição}")]
         public IActionResult Get(string NúmeroInscrição)
         {
             try
             {
                 string Retorno = _dataParticipante.BUSCAR_INFORMACOES_DO_PARTICIPANTE(new NúmeroInscrição(NúmeroInscrição)).ToString();
-
-                if (Retorno is null)
-                {
-                    return NotFound("Não foi possível encontrar o número de inscrição");
-                }
-                else
-                {
-                    return Ok(Retorno);
-                }
+                return (Retorno is null) ? NotFound("Não foi possível encontrar o número de inscrição") : Ok(Retorno);
             }
             catch
             {
