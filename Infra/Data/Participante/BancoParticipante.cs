@@ -30,8 +30,7 @@ namespace APIEnem.Infra.Data.Participante
                         {
                             await dataAdapter.FillAsync(Data);
                         }                        
-                        return (Data.Rows.Count > 0) ? 
-                            new Json(Data) : throw new Exception("O código do participante inserido não consta no banco de dados.");
+                        return (Data.Rows.Count > 0) ? new Json(Data) : throw new Exception("O código do participante inserido não consta no banco de dados.");
                     }
                 }
             }
