@@ -21,23 +21,16 @@ namespace APIEnem.Infra.Data.Participante
             {
                 using (MySqlCommand Comando = _conexaoBanco.ConectarBanco().CreateCommand())
                 {
-                    Comando.CommandText = "SELECT * FROM TB_DADOS WHERE NU_INSCRICAO = @NúmeroDeInscrição";
+                    string querySql = "SELECT * FROM TB_DADOS WHERE NU_INSCRICAO = @NúmeroDeInscrição";
+                    Comando.CommandText = querySql;
                     Comando.Parameters.AddWithValue("@NúmeroDeInscrição", Número.ToString());
                     using (DataTable Data = new DataTable())
                     {
                         using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(Comando))
                         {
                             await dataAdapter.FillAsync(Data);
-                        }
-
-                        if (Data.Rows.Count > 0)
-                        {
-                            return new Json(Data);
-                        }
-                        else
-                        {
-                            throw new Exception("O código do participante inserido não consta no banco de dados.");
-                        }
+                        }                        
+                        return (Data.Rows.Count > 0) ? new Json(Data) : throw new Exception("O código do participante inserido não consta no banco de dados.");
                     }
                 }
             }
